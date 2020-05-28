@@ -1,0 +1,111 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        #customers {
+            font-family: sans-serif,Bahnschrift;
+            
+            width: 80%;
+        }
+
+            #customers td, #customers th, #customers tr {
+                padding: 20px;
+                color:white;
+                
+            }
+
+
+
+            #customers tr:hover {
+                background-color: grey;
+                color: white;
+            }
+
+        .btn1 {
+            margin-left: 15px;
+            margin-right: 1px;
+            background-image: repeating-radial-gradient(salmon,black);
+            color: white;
+            padding: 11px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        btn1 {
+            background-color: black;
+        }
+        
+
+            #customers th {
+                padding-top: 20px;
+                padding-bottom: 20px;
+                text-align:center;
+                background-image:repeating-radial-gradient(salmon,black);
+                color: white;
+            }
+    </style>
+</head>
+<body>
+    <div style="float:left; width:380px;">
+        <form style="margin-top: 60px;  " action="/Home/ShowCategoryDetail">
+            
+            <input style="width:30%;height:40px; border-radius:0;" type="text" placeholder="Search Category" name="category">
+            <br />
+            <br />
+            <button style="width: 30%; height: 30px; border-radius: 10px; border: 2px solid white; background-image: repeating-radial-gradient(salmon,black); color: black;" class="btn btn-success">Search</button>
+        </form>
+    </div>
+    <div>
+        <form style="margin-top: 60px;" action="/Home/ShowNameDetail">
+            
+            <input style="width: 10%; height: 40px; border-radius:0;" type="text" placeholder="Search name" name="title">
+            <br />
+            <br />
+            <button style="width: 10%; height: 30px; border-radius: 10px; border: 2px solid white; background-image: repeating-radial-gradient(salmon,black); color: black;" class="btn btn-success">Search</button>
+        </form>
+    </div>
+
+    <table id="customers">
+        <tr>
+            <th>Products Name</th>
+            <th>Description</th>
+
+            <th>Prices</th>
+            <th>Categories</th>
+            <th colspan="2" style="text-align:center">Edit/Delete</th>
+        </tr>
+        @{ foreach (var a in Model)
+         {
+            <tr>
+                
+                <td>@a.title</td>
+                <td>@a.description</td>
+                <td>@a.price</td>
+                <td>@a.category</td>
+                <td>
+                    <a class="btn1" href="/Home/EditInfo/@a.Id">Edit</a>
+                </td>
+                <td>
+                    <form action="/Home/Delete/@a.Id" method="post">
+                        <input class="btn1" type="submit" value="Delete">
+                    </form>
+
+                 </td>       
+                         
+            </tr>
+           
+         }
+          
+        }
+        </table>
+        
+</body>
+</html>

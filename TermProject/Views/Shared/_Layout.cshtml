@@ -1,0 +1,55 @@
+﻿<html>
+<head>
+    <style>
+        body {
+            font-size: 14px;
+            background-image: repeating-linear-gradient(deepskyblue,darkslategray);
+        }
+
+        .heading1{
+            font-size: 50px;
+            color: Black;
+            text-align:center;
+            font-family:'Yu Gothic';
+           
+        }
+
+        ul {
+            list-style-type: none;
+            border-style: dotted;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-image:repeating-radial-gradient(salmon,black);
+            
+        }
+
+        li {
+            float: left;
+        }
+
+            li a {
+                display:grid;
+                color:white;
+                text-align: center;
+                padding: 20px 90px 20px;
+                text-decoration:dotted ;
+                font-size:30px;
+            }
+
+    </style>
+</head>
+<body>
+    <h1 class="heading1">Accessories Store </h1>
+    <ul>
+        <li><a class="active" href="/Home/Index">Home</a></li>
+        <li><a href="/Home/ViewItems">View Products</a></li>
+        <li><a href="/Home/AddItems">Add Products</a></li>
+        <li><a href="/Home/Contact">Contact Us</a></li>
+    </ul>
+
+    
+    @RenderBody()
+
+</body>
+</html>

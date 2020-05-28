@@ -1,0 +1,80 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        #customers {
+            font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+            
+            width: 80%;
+        }
+
+            #customers td, #customers th {
+                
+                padding: 8px;
+            }
+
+          
+
+         
+
+        .btn1 {
+            margin-left: 15px;
+            margin-right: 1px;
+            background-color: #f44336;
+            color: white;
+            padding: 11px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        btn1 {
+            background-color: gray;
+        }
+
+
+        #customers th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            background-image: repeating-radial-gradient(salmon,black);
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <table id="customers">
+        <tr>
+            <th>Name</th>
+            <th>Description</th>
+
+            <th>Price</th>
+            <th>Category</th>
+            
+        </tr>
+       
+            @{ foreach (var a in Model)
+         {
+    <tr>
+        <td>@a.title</td>
+        <td>@a.description</td>
+        <td>@a.price</td>
+        <td>@a.category</td>
+            
+            </tr>
+            }}
+
+
+
+
+
+</table>
+
+</body>
+</html>
